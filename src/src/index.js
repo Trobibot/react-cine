@@ -5,13 +5,18 @@ import { Box } from '@mui/material';
 
 import MovieList from './pages/MovieList'
 import MovieDetail from './pages/MovieDetail'
+import HomePage from './pages/HomePage'
+
+import NavBar from './components/NavBar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Box sx={{ minWidth: '500px', maxWidth: '800px', width: '60%', margin: 'auto', marginTop: '64px' }}>
+  <Box sx={{ minWidth: '500px', maxWidth: '800px', width: '60%', margin: 'auto', marginTop: '128px' }}>
     <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<MovieList />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<MovieList />} />
         <Route path="movies/:id" element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
